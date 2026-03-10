@@ -1,0 +1,46 @@
+import styled, { ThemeProvider } from "styled-components";
+import { darkTheme } from "./utils/theme";
+import Home from "./pages/home";
+import CreatePost from "./pages/createpost";
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import Navbar from "./component/navbar";
+
+const Container = styled.div`
+  width: 100%;
+  height: 100vh; /* Use vh for full height */
+  display: flex;
+  background: ${({ theme }) => theme.bg};
+  color: ${({ theme }) => theme.text_primary};
+  overflow-x: hidden;
+  overflow-y: auto; /* Scroll allow karne ke liye */
+  transition: all 0.2s ease;
+`;
+
+const Wrapper = styled.div`
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 3;
+`;
+function App() {
+  
+  return (
+    <ThemeProvider theme={darkTheme}>
+      <Container>
+        <Wrapper>
+          <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+             <Route path="/post" element={<CreatePost />} />
+          </Routes>
+          </BrowserRouter>
+        </Wrapper>
+      </Container>
+    </ThemeProvider>
+  );
+}
+
+export default App;
