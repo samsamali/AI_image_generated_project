@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "./Button";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation,NavLink } from "react-router-dom";
 
 const Container = styled.div`
   flex: 1;
@@ -41,8 +41,9 @@ const Navbar = () => {
           text="Create New Post"
         />
       )}
+      <NavLink to="/documentation">documentation</NavLink>
     </Container>
   );
 };
 
-export default Navbar;
+export default Navbar

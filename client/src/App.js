@@ -1,4 +1,5 @@
 import styled, { ThemeProvider } from "styled-components";
+import Documentation from "./pages/documentation";
 import { darkTheme } from "./utils/theme";
 import Home from "./pages/home";
 import CreatePost from "./pages/createpost";
@@ -35,6 +36,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
              <Route path="/post" element={<CreatePost />} />
+             <Route path="/documentation" element={<Documentation />} />
           </Routes>
           </BrowserRouter>
         </Wrapper>
